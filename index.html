@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akanksha Garg - Full-Stack Developer & AI Specialist</title>
+    <meta name="description" content="Akanksha Garg - Full-Stack Developer specializing in AI-powered health platforms. Creator of PantryPal AI Health Platform. MS Computer Science @ RIT.">
+    <meta name="keywords" content="Akanksha Garg, software engineer, full-stack developer, AI, machine learning, Next.js, TypeScript, PantryPal, health technology">
+    <meta name="author" content="Akanksha Garg">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Akanksha Garg - Full-Stack Developer & AI Specialist">
+    <meta property="og:description" content="Creator of PantryPal AI Health Platform. Specializing in AI-powered applications and health technology solutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://akankshagarg.dev">
+    <meta property="og:image" content="https://akankshagarg.dev/assets/IMG_0017.JPG">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/IMG_0017.JPG">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            color: #1a1a1a;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #4a89dc;
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4a89dc;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #2a69bc;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #4a89dc;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            font-family: inherit;
+        }
+
+        .btn:hover {
+            background: #2a69bc;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(74, 137, 220, 0.3);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #4a89dc, #5b9bd5);
+            margin-right: 10px;
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #6c757d, #5a6268);
+        }
+
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #5a6268, #495057);
+        }
+
+        section {
+            padding: 30px 0;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97') no-repeat center center/cover;
+            height: 100vh;
+            color: #fff;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .name-container {
+            margin-bottom: 30px;
+        }
+
+        .header-content h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 50px;
+            z-index: 100;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #4a89dc;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 30px;
+            height: 3px;
+            background-color: #fff;
+            margin: 3px 0;
+            transition: 0.4s;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin: 0 10px;
+            color: #fff;
+            font-size: 1.4rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background-color: #4a89dc;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(74, 137, 220, 0.3);
+        }
+
+        /* About Section */
+        #about {
+            background-color: #fff;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-image {
+            flex: 0 0 300px;
+            margin-right: 50px;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text strong {
+            color: #4a89dc;
+            font-weight: 600;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info i {
+            margin-right: 15px;
+            color: #4a89dc;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Skills Section */
+        #skills {
+            background-color: #f8f9fa;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .skill-category {
+            flex: 0 0 calc(33.333% - 30px);
+            margin-bottom: 40px;
+        }
+
+        .skill-category h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: #333;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4a89dc;
+        }
+
+        .skill-item {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .skill-item span {
+            flex: 0 0 120px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .skill-item .percentage {
+            flex: 0 0 40px;
+            text-align: right;
+            font-weight: bold;
+            color: #4a89dc;
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 12px;
+            background-color: #e9e9e9;
+            border-radius: 6px;
+            margin: 0 15px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: linear-gradient(135deg, #4a89dc, #5b9bd5);
+            border-radius: 6px;
+            transition: width 1.5s ease-in-out;
+            position: relative;
+        }
+
+        /* Timeline Styles */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #4a89dc;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            padding: 10px 50px;
+            position: relative;
+            width: 50%;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item.left {
+            left: 0;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: #fff;
+            border: 4px solid #4a89dc;
+            top: 20px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item.right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 30px;
+            background-color: #fff;
+            position: relative;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .timeline-item.left .timeline-content {
+            border-right: 5px solid #4a89dc;
+        }
+
+        .timeline-item.right .timeline-content {
+            border-left: 5px solid #4a89dc;
+        }
+
+        .timeline-logo {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .timeline-item.left .timeline-logo {
+            right: -30px;
+            top: 15px;
+        }
+
+        .timeline-item.right .timeline-logo {
+            left: -30px;
+            top: 15px;
+        }
+
+        .timeline-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 1.3rem;
+        }
+
+        .timeline-content h4 {
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .timeline-content .period {
+            color: #4a89dc;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .timeline-content ul {
+            margin-top: 15px;
+        }
+
+        .timeline-content li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            line-height: 1.5;
+        }
+
+        .timeline-content li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 8px;
+            height: 8px;
+            background-color: #4a89dc;
+            border-radius: 50%;
+        }
+
+        .timeline-content strong {
+            color: #4a89dc;
+            font-weight: 600;
+        }
+
+        /* Portfolio Section */
+        #portfolio {
+            background-color: #fff;
+        }
+
+        .portfolio-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+
+        .portfolio-item {
+            flex: 0 0 100%;
+            max-width: 900px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .featured-project {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border: 2px solid #4a89dc;
+        }
+
+        .portfolio-image {
+            position: relative;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(74, 137, 220, 0.95), rgba(91, 155, 213, 0.95));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-item:hover .portfolio-image img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-description {
+            text-align: center;
+            padding: 40px;
+            color: #fff;
+        }
+
+        .portfolio-description h3 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .portfolio-description p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tech-stack {
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .tech-tag {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .project-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .project-links .btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border: 2px solid #fff;
+            padding: 12px 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .project-links .btn:hover {
+            background: #fff;
+            color: #4a89dc;
+            transform: translateY(-2px);
+        }
+
+        /* Project Details */
+        .project-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .detail-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid #4a89dc;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .detail-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #4a89dc, #5b9bd5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: #fff;
+            font-size: 2rem;
+        }
+
+        .detail-card h4 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .detail-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Achievements Section */
+        .achievements-section {
+            background: linear-gradient(135deg, #4a89dc, #5b9bd5);
+            color: #fff;
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .achievements-section h3 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #fff;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .achievement-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .achievement-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .achievement-label {
+            font-size: 1rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #f8f9fa;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .contact-info {
+            flex: 0 0 35%;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .contact-item i {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #4a89dc, #5b9bd5);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.3rem;
+        }
+
+        .contact-form {
+            flex: 0 0 60%;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #4a89dc;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(74, 137, 220, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-message {
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .form-message.success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+
+        .form-message.error {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 992px) {
+            .container {
+                padding: 60px 20px;
+            }
+            
+            .skill-category {
+                flex: 0 0 calc(50% - 20px);
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item.left, 
+            .timeline-item.right {
+                left: 0;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item.left::after,
+            .timeline-item.right::after {
+                left: 20px;
+            }
+            
+            .timeline-item.left .timeline-logo,
+            .timeline-item.right .timeline-logo {
+                left: 0;
+            }
+            
+            .timeline-item.left .timeline-content,
+            .timeline-item.right .timeline-content {
+                border-left: 5px solid #4a89dc;
+                border-right: none;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .contact-info,
+            .contact-form {
+                flex: 0 0 100%;
+            }
+
+            .project-details {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .achievements-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .hamburger-menu {
+                display: flex;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.95);
+                width: 100%;
+                height: calc(100vh - 80px);
+                transition: 0.5s;
+                padding: 20px 0;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .nav-links a {
+                font-size: 1.2rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-image {
+                margin-right: 0;
+                margin-bottom: 30px;
+                max-width: 250px;
+            }
+            
+            .skill-category {
+                flex: 0 0 100%;
+            }
+            
+            .header-content h1 {
+                font-size: 3rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+                padding: 0 20px;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+
+            .portfolio-description {
+                padding: 30px 20px;
+            }
+
+            .portfolio-description h3 {
+                font-size: 1.5rem;
+            }
+
+            .achievements-section {
+                padding: 30px 20px;
+            }
+
+            .achievement-number {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media screen and (max-width: 572px) {
+            .container {
+                padding: 40px 15px;
+            }
+            
+            nav {
+                padding: 15px 20px;
+            }
+            
+            .timeline-content {
+                padding: 20px;
+            }
+            
+            .timeline-item {
+                padding-left: 60px;
+            }
+            
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .portfolio-image {
+                height: 250px;
+            }
+
+            .detail-card {
+                padding: 20px;
+            }
+
+            .detail-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 25px;
+            }
+        }
+
+        /* Animation Effects */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Active hamburger menu */
+        .hamburger-menu.active .bar:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger-menu.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu.active .bar:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #4a89dc, #5b9bd5);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #2a69bc, #4a89dc);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header id="home">
+        <div class="header-content">
+            <div class="name-container">
+                <h1>Akanksha Garg</h1>
+                <p class="tagline">Full-Stack Developer | Creator of PantryPal AI Health Platform | Expertise in Scalable Systems & AI-Powered Solutions</p>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/ag2671/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/AG-SDE" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:ag2671@rit.edu" aria-label="Send Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://pantrypal.in" target="_blank" rel="noopener noreferrer" aria-label="PantryPal AI Health Platform">
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+        </div>
+        <nav>
+            <div class="hamburger-menu" aria-label="Toggle navigation menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="profile-image">
+                    <img src="assets/IMG_0017.JPG" alt="Akanksha Garg - Professional Photo" loading="lazy">
+                </div>
+                <div class="about-text">
+                    <p>A passionate full-stack developer currently pursuing an MS in Computer Science at RIT, with expertise in building AI-powered applications that solve real-world health and nutrition challenges. Creator of <strong>PantryPal</strong>, a comprehensive health-first recipe platform that combines machine learning with personalized nutrition planning for users with complex medical conditions.</p>
+                    <p>I specialize in modern web technologies including Next.js, TypeScript, and AI integration, with proven experience in developing scalable solutions for complex business problems. My background spans from technology automation in manufacturing to creating intelligent web applications that serve users with diverse health needs, including support for 50+ medical conditions.</p>
+                    <p>My approach combines technical excellence with user-centered design, ensuring that complex healthcare technology remains accessible and intuitive for everyday users.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Rochester, NY 14623</p>
+                        <p><i class="fas fa-phone"></i> +1 (585) 506-1121</p>
+                        <p><i class="fas fa-envelope"></i> ag2671@rit.edu</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Core Competencies</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Full-Stack Development</h3>
+                    <div class="skill-item">
+                        <span>Next.js/React</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 92%" data-skill="92"></div>
+                        </div>
+                        <span class="percentage">92%</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>TypeScript</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 88%" data-skill="88"></div>
+                        </div>
+                        <span class="percentage">88%</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Node.js</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 85%" data-skill="85"></div>
+                        </div>
+                        <span class="percentage">85%</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Python</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 85%" data-skill="85"></div>
+                        </div>
+                        <span class="percentage">85%</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-brain"></i> AI & Cloud Technologies</h3>
+                    <div class="skill-item">
+                        <span>OpenAI/Perplexity</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 90%" data-skill="90"></div>
+                        </div>
+                        <span class="percentage">90%</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Supabase</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 87%" data-skill="87"></div>
+                        </div>
+                        <span class="percentage">87%</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Vercel/AWS</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 80%" data-skill="80"></div>
+                        </div>
+                        <span class="percentage">80%</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>PostgreSQL</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 82%" data-skill="82"></div>
+                        </div>
+                        <span class="percentage">82%</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Development Tools & Practices</h3>
+                    <div class="skill-item">
+                        <span>Git/GitHub</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 90%" data-skill="90"></div>
+                        </div>
+                        <span class="percentage">90%</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Agile/TDD</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 85%" data-skill="85"></div>
+                        </div>
+                        <span class="percentage">85%</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>REST APIs</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 88%" data-skill="88"></div>
+                        </div>
+                        <span class="percentage">88%</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Tailwind CSS</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 85%" data-skill="85"></div>
+                        </div>
+                        <span class="percentage">85%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-logo">
+                            <i class="fas fa-laptop-code" style="font-size: 24px; color: #4a89dc;"></i>
+                        </div>
+                        <h3>Full-Stack Developer (Personal Project)</h3>
+                        <h4>PantryPal - AI Health Platform</h4>
+                        <p class="period">November 2024 - Present</p>
+                        <ul>
+                            <li>Architected and developed comprehensive AI-powered recipe platform using <strong>Next.js 14</strong>, <strong>TypeScript</strong>, and <strong>Supabase</strong>, serving users with complex health conditions</li>
+                            <li>Integrated <strong>Perplexity Sonar API</strong> for intelligent recipe generation and health condition analysis, supporting <strong>50+ medical conditions</strong> including rare diseases like POTS and MCAS</li>
+                            <li>Built responsive healthcare-grade application with real-time shopping lists, ingredient price estimation, and medication interaction checking</li>
+                            <li>Deployed scalable solution on <strong>Vercel</strong> with <strong>99.9% uptime</strong> and mobile-optimized user experience, achieving sub-2-second load times</li>
+                            <li><strong>Live Production App:</strong> <a href="https://pantrypal.in" target="_blank" rel="noopener noreferrer">https://pantrypal.in</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-logo">
+                            <img src="assets/sandeep.jpg" alt="Marketing Company" loading="lazy">
+                        </div>
+                        <h3>Junior Marketing Manager</h3>
+                        <h4>M/s. Sandeep Kumar and Company</h4>
+                        <p class="period">September 2022 - August 2024</p>
+                        <ul>
+                            <li>Developed automated forecasting tools using <strong>Think-cell</strong>, reducing report preparation time by <strong>20%</strong> and improving data accuracy</li>
+                            <li>Designed <strong>SQL-based data solutions</strong> that improved analysis accuracy by <strong>15%</strong>, directly contributing to revenue growth strategies and monetization initiatives</li>
+                            <li>Applied data-driven methodologies and process optimization techniques that enhanced business intelligence capabilities</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-logo">
+                            <img src="assets/magnifying glass and agriculture.jpg" alt="Quality Control" loading="lazy">
+                        </div>
+                        <h3>Quality Control Officer</h3>
+                        <h4>M/s. Garg Fertilisers</h4>
+                        <p class="period">August 2020 - September 2022</p>
+                        <ul>
+                            <li>Applied <strong>Lean Six Sigma</strong> techniques to enhance process efficiency by <strong>15%</strong> while managing a team of <strong>80 workers</strong></li>
+                            <li>Implemented <strong>multimodal data integration</strong> combining agricultural, environmental, and health datasets to optimize production quality</li>
+                            <li>Developed quality control protocols that reduced production errors and improved product consistency across manufacturing processes</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-logo">
+                            <img src="assets/rice mill technology analysis.jpg" alt="Technology Analysis" loading="lazy">
+                        </div>
+                        <h3>Technology Analyst</h3>
+                        <h4>M/s. Radha Krishna Industries</h4>
+                        <p class="period">July 2017 - July 2020</p>
+                        <ul>
+                            <li>Automated rice mill operations using <strong>MCC, PCC, PLC Panels</strong>, and <strong>SCADA</strong> systems for real-time monitoring and error reporting</li>
+                            <li>Introduced <strong>VFD Panels</strong> for efficient motor operation and implemented fluid bed coolers, reducing drying time by <strong>9%</strong></li>
+                            <li>Implemented <strong>IoT-based monitoring systems</strong> and optical sorters that increased production efficiency through real-time process optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2>Education & Certifications</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-logo">
+                            <img src="assets/Rochester-Institute-of-Technology-3.jpg.webp" alt="Rochester Institute of Technology" loading="lazy">
+                        </div>
+                        <h3>Master of Science in Computer Science</h3>
+                        <h4>Rochester Institute of Technology</h4>
+                        <p class="period">August 2024 - Expected May 2026</p>
+                        <p><strong>Golisano College of Computing & Information Sciences</strong>, Rochester, NY</p>
+                        <p><strong>Focus Areas:</strong> Artificial Intelligence/Machine Learning, Software Engineering, Advanced Web Development, Healthcare Technology</p>
+                        <p><strong>Relevant Coursework:</strong> Advanced Algorithms, Machine Learning, Software Engineering, Database Systems</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-logo">
+                            <i class="fas fa-graduation-cap" style="font-size: 24px; color: #4a89dc;"></i>
+                        </div>
+                        <h3>Professional Certificate - Web Development</h3>
+                        <h4>IITM Pravartak | MERN Stack | Java</h4>
+                        <p class="period">2025 - Present</p>
+                        <p><strong>Blended Learning Program</strong> focusing on full-stack development with modern technologies</p>
+                        <p><strong>Curriculum:</strong> React, Node.js, MongoDB, Express.js, Java, Advanced Web Development</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-logo">
+                            <i class="fas fa-certificate" style="font-size: 24px; color: #4a89dc;"></i>
+                        </div>
+                        <h3>Certificate of Excellence - DBMS</h3>
+                        <h4>Coding Ninjas</h4>
+                        <p class="period">August 2025</p>
+                        <p><strong>Top Performer</strong> in Interview Preparation | Database Management System (DBMS)</p>
+                        <p><strong>Mentor:</strong> Ankush Singla</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-logo">
+                            <img src="assets/thapar-institute-of-engineering-technology-patiala-214568.jpg" alt="Thapar University" loading="lazy">
+                        </div>
+                        <h3>Bachelor of Engineering</h3>
+                        <h4>Electronics Instrumentation and Control Engineering</h4>
+                        <p class="period">August 2013 - June 2017</p>
+                        <p><strong>Thapar Institute of Engineering and Technology</strong>, Patiala, Punjab, India</p>
+                        <p><strong>CGPA:</strong> 8.14/10.0</p>
+                        <p><strong>Key Projects:</strong> Automation Systems, Process Control, Data Acquisition Systems</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="portfolio-container">
+                <div class="portfolio-item featured-project">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=500&fit=crop&auto=format&q=80" alt="PantryPal AI Health Platform - AI-powered recipe and nutrition management" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-description">
+                                <h3>PantryPal - AI Health Platform</h3>
+                                <p>Revolutionary AI-powered recipe platform combining intelligent meal planning with comprehensive health management for 50+ medical conditions. Features real-time ingredient price estimation, smart shopping lists, and medication interaction checking.</p>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">Next.js 14</span>
+                                    <span class="tech-tag">TypeScript</span>
+                                    <span class="tech-tag">Perplexity API</span>
+                                    <span class="tech-tag">Supabase</span>
+                                    <span class="tech-tag">PostgreSQL</span>
+                                    <span class="tech-tag">Tailwind CSS</span>
+                                    <span class="tech-tag">Vercel</span>
+                                    <span class="tech-tag">Healthcare AI</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://pantrypal.in" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                        <i class="fas fa-external-link-alt"></i> Live Demo
+                                    </a>
+                                    <a href="https://github.com/AG-SDE/pantrypal-health-platform" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                                        <i class="fab fa-github"></i> Source Code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Details Section -->
+            <div class="project-details">
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h4>AI-Powered Intelligence</h4>
+                    <p>Advanced Perplexity Sonar API integration for personalized recipe generation, health condition analysis, and intelligent ingredient recommendations tailored to individual medical needs and dietary restrictions.</p>
+                </div>
+                
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h4>Health-First Approach</h4>
+                    <p>Comprehensive support for 50+ medical conditions including diabetes, heart disease, POTS, MCAS, and rare conditions with real-time medication interaction checking and nutritional optimization.</p>
+                </div>
+                
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h4>Smart Shopping Integration</h4>
+                    <p>Intelligent shopping lists with real-time price comparison, store optimization, category organization, and direct grocery delivery integration for seamless meal planning.</p>
+                </div>
+                
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h4>Responsive Design</h4>
+                    <p>Mobile-first architecture with seamless user experience across all devices, optimized for accessibility, performance, and healthcare compliance standards.</p>
+                </div>
+            </div>
+
+            <!-- Key Achievements -->
+            <div class="achievements-section">
+                <h3>Key Technical Achievements</h3>
+                <div class="achievements-grid">
+                    <div class="achievement-item">
+                        <div class="achievement-number">99.9%</div>
+                        <div class="achievement-label">Uptime</div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-number">50+</div>
+                        <div class="achievement-label">Health Conditions Supported</div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-number">1000+</div>
+                        <div class="achievement-label">Recipe Variations</div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-number">Sub-2s</div>
+                        <div class="achievement-label">Load Times</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Rochester, NY 14623</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (585) 506-1121</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>ag2671@rit.edu</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <div>
+                            <h4>Featured Project</h4>
+                            <p><a href="https://pantrypal.in" target="_blank" rel="noopener noreferrer">pantrypal.in</a></p>
+                        </div>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/ag2671/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/AG-SDE" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <div id="form-message" class="form-message"></div>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="sr-only">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Your Email</label>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" class="sr-only">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="sr-only">Your Message</label>
+                            <textarea id="message" name="message" placeholder="Your Message" required aria-required="true"></textarea>
+                        </div>
+                        <button type="submit" class="btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Akanksha Garg. All Rights Reserved. | Creator of <a href="https://pantrypal.in" target="_blank" rel="noopener noreferrer">PantryPal AI Health Platform</a> | <a href="https://github.com/AG-SDE" target="_blank" rel="noopener noreferrer">Open Source Contributions</a></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Initialize EmailJS
+        (function() {
+            emailjs.init("Rsz8_ZVtIMB7TN5mI"); 
+        })();
+
+        // Hamburger menu functionality
+        document.querySelector('.hamburger-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+                document.querySelector('.hamburger-menu').classList.remove('active');
+            });
+        });
+
+        // Enhanced form submission with EmailJS
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formMessage = document.getElementById('form-message');
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            formMessage.style.display = 'none';
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Send email using EmailJS
+            console.log('Sending email with data:', formData);
+            emailjs.send('service_jr37exc', 'template_sjn97xr', formData)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    formMessage.className = 'form-message success';
+                    formMessage.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully. I will get back to you soon.';
+                    formMessage.style.display = 'block';
+                    document.getElementById('contactForm').reset();
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    formMessage.className = 'form-message error';
+                    formMessage.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Sorry, there was an error sending your message. Please try again or contact me directly at ag2671@rit.edu';
+                    formMessage.style.display = 'block';
+                })
+                .finally(function() {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Progress bar animation on scroll
+        const animateProgressBars = () => {
+            const progressBars = document.querySelectorAll('.progress');
+            progressBars.forEach(bar => {
+                const rect = bar.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    const skill = bar.getAttribute('data-skill');
+                    bar.style.width = skill + '%';
+                }
+            });
+        };
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.timeline-item, .detail-card, .achievement-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Scroll event listeners
+        window.addEventListener('scroll', () => {
+            animateProgressBars();
+        });
+
+        // Initial load animations
+        window.addEventListener('load', () => {
+            animateProgressBars();
+        });
+
+        // Update navigation active state on scroll
+        const updateActiveNav = () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', updateActiveNav);
+
+        // Initialize everything when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Portfolio loaded successfully!');
+            console.log('Check out PantryPal: https://pantrypal.in');
+            
+            // Initial animations
+            setTimeout(() => {
+                document.body.classList.add('loaded');
+            }, 100);
+        });
+    </script>
+</body>
+</html>
